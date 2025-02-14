@@ -110,7 +110,7 @@ inline uint64_t rdtsc() {
     // and IA-64 Instruction Set Architectures pp-9
     // https://intel.ly/3dXFfQN
 #ifdef FASTOR_SIMPLE_RDTSC
-    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    // __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
     return ((uint64_t)hi << 32) | lo;
 #else
     // Use this instead
